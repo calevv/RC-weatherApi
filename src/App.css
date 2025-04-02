@@ -1,0 +1,83 @@
+body {
+    background-image: url('/weather_background.png');
+    background-repeat: no-repeat;
+    background-size: auto;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: rgba(167, 185, 241, 0.45) 0px 5px 15px;
+    width: 600px;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.loadingSpinner {
+    margin: 0 auto;
+}
+
+.weather-box {
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+.weather-box > figure {
+    height: 100px;
+    box-sizing: border-box;
+}
+.weather-button {
+    display: grid;
+    grid: repeat(2, auto) / repeat(2, 1fr);
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px;
+}
+
+.weather-button button {
+    border: 4px solid #fff;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.4);
+    font-size: 1rem;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    &:first-of-type {
+        grid-column: 1/3;
+    }
+
+    &:hover {
+        background-color: #fff;
+        color: #333;
+        outline: 1px solid #333;
+    }
+}
+
+.weather-button button.button_selected {
+    border: 4px solid #fff;
+    background-color: #fff;
+    color: #999;
+    font-weight: 700;
+}
+
+/* 미디어 쿼리: 최대 768px 화면에 대한 스타일 조정 */
+@media (max-width: 768px) {
+    .container {
+        width: 500px;
+    }
+}
+
+/* 추가적인 미디어 쿼리: 최대 480px 화면에 대한 스타일 조정 */
+@media (max-width: 480px) {
+    .container {
+        width: 360px;
+    }
+}
