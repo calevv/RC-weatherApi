@@ -8,7 +8,12 @@ export const WeatherBox = ({ weather }) => {
         <div className="weather-box">
             <h1>{weather?.name}</h1>
             <figure>
-                <img src={`https://openweathermap.org/img/wn/${weather?.weather[0].icon}@2x.png`} alt={weather?.name} />
+                {weather?.weather[0].icon && (
+                    <img
+                        src={`https://openweathermap.org/img/wn/${weather?.weather[0].icon}@2x.png`}
+                        alt={weather?.name}
+                    />
+                )}
             </figure>
             <h2>
                 {temp?.toFixed(1)}°C / {fahrenheit?.toFixed(1)}°F
