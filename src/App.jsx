@@ -12,6 +12,8 @@ import ClipLoader from 'react-spinners/ClipLoader';
 // 6. 데이터를 들고오는 동안 로딩 스피너가 돈다.
 
 function App() {
+    const apiKey = import.meta.env.VITE_API_KEY;
+
     const [weather, setWeather] = useState(null);
     const [city, setCity] = useState('');
     const [loading, setLoading] = useState(false);
@@ -27,7 +29,7 @@ function App() {
     const getWeatherByCurrentLocation = async (lat, lon) => {
         try {
             setLoading(true);
-            let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=cc94185a95b8f0df873dccce07da6054`;
+            let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}&lang=kr`;
             let response = await fetch(url);
             let data = await response.json();
             //console.log(data);
@@ -41,7 +43,7 @@ function App() {
     const changeWeatherByCityName = async () => {
         try {
             setLoading(true);
-            let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=cc94185a95b8f0df873dccce07da6054`;
+            let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=kr`;
             let response = await fetch(url);
             let data = await response.json();
             console.log('change', data);
