@@ -17,7 +17,7 @@ function App() {
     const [weather, setWeather] = useState(null);
     const [city, setCity] = useState('');
     const [loading, setLoading] = useState(false);
-    const cities = ['London', 'Paris', 'Hawaii', 'Canberra'];
+    const cities = ['London', 'Paris', 'Shanghai', 'Canberra'];
     const getCurrentLocation = () => {
         navigator.geolocation.getCurrentPosition((position) => {
             let lat = position.coords.latitude;
@@ -46,7 +46,6 @@ function App() {
             let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=kr`;
             let response = await fetch(url);
             let data = await response.json();
-            console.log('change', data);
             setWeather(data);
 
             setLoading(false);

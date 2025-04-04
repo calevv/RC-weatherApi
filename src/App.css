@@ -28,6 +28,32 @@ body {
     color: #fff;
     padding: 10px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather-box h1 {
+    text-align: center;
+}
+
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    color: #fff;
+    margin-top: 10px;
+    animation: colorChange 0.1s infinite alternate;
+}
+
+@keyframes colorChange {
+    from {
+        color: #fff;
+    }
+    to {
+        color: #555;
+    }
 }
 .weather-box > figure {
     height: 100px;
