@@ -71,13 +71,13 @@ body {
 /* 미디어 쿼리: 최대 768px 화면에 대한 스타일 조정 */
 @media (max-width: 768px) {
     .container {
-        width: 500px;
+        width: 450px;
     }
 }
 
 /* 추가적인 미디어 쿼리: 최대 480px 화면에 대한 스타일 조정 */
 @media (max-width: 480px) {
     .container {
-        width: 360px;
+        width: 330px;
     }
 }
